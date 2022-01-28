@@ -12,18 +12,29 @@ const init = function() {
     document.body.appendChild(ul); // add ul to body 
     button.addEventListener('click', createLiElements); // Listener
 
-    const resetButton = document.createElement('reset');
-    
-
+    const resetButton = document.createElement('button');
+    resetButton.textContent = "Reset";
+    resetButton.style.fontSize = "30px";
+    document.body.appendChild(resetButton);
+    resetButton.addEventListener('click', reset);
 };
 
-const createLiElements = function(){
-    const addItem = document.createElement("ul");
+const createLiElements = function(){ // New function to creat elements 
+    const addItem = document.createElement("li");
     addItem.textContent = orderElement;
     document.body.appendChild(addItem); 
     orderElement++;
     addItem.style.fontSize = size +"px";
     size+=10;
+    document.querySelector('ul').appendChild(addItem);
+};
+
+const reset = function(){
+    console.log("work");
+    document.querySelector('ul').textContent =""; // reset ul
+    size = 10;
+    orderElement = 1;
+    
 };
 
 init();
