@@ -12,11 +12,18 @@ const init = function() {
     document.body.appendChild(ul); // add ul to body 
     button.addEventListener('click', createLiElements); // Listener
 
+    const resetButton = document.createElement('reset');
+    
+
 };
 
 const createLiElements = function(){
-    
-
+    const addItem = document.createElement("ul");
+    addItem.textContent = orderElement;
+    document.body.appendChild(addItem); 
+    orderElement++;
+    addItem.style.fontSize = size +"px";
+    size+=10;
 };
 
 init();
